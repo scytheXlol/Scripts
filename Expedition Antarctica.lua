@@ -13,6 +13,6 @@ Fire(Remote)
 
 queue_on_teleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/scytheXlol/Scripts/refs/heads/main/Expedition%20Antarctica.lua"))()]])
 
-LP["Expedition Data"].Coins.Changed:Connect(function(Value)
+WaitForChild(LP["Expedition Data"].Coins).Changed:Connect(function(Value)
     TeleportService:TeleportToPlaceInstance(PlaceId, JobId)
 end)
