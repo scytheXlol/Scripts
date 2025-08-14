@@ -11,4 +11,6 @@ Fire(Remote)
 
 queue_on_teleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/scytheXlol/Scripts/refs/heads/main/Expedition%20Antarctica.lua"))()]])
 
+wait(5.5)
+
 TeleportService:TeleportToPlaceInstance(PlaceId, JobId)
