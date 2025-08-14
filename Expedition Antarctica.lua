@@ -1,4 +1,3 @@
-print('.')
 local RS = game:GetService('ReplicatedStorage')
 local LP = game:GetService("Players").LocalPlayer
 local JobId = game.JobId
