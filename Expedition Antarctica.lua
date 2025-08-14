@@ -12,6 +12,13 @@ Fire(Remote)
 
 queue_on_teleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/scytheXlol/Scripts/refs/heads/main/Expedition%20Antarctica.lua"))()]])
 
-game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("Altimeter").ImageLabel.Coin_Image.Coin_Amount.Changed:Connect(function(Value)
+local player = game:GetService("Players").LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+local altimeter = playerGui:WaitForChild("Altimeter")
+local imageLabel = altimeter:WaitForChild("ImageLabel")
+local coinImage = imageLabel:WaitForChild("Coin_Image")
+local coinAmount = coinImage:WaitForChild("Coin_Amount")
+
+coinAmount.Changed:Connect(function(Value)
     TeleportService:TeleportToPlaceInstance(PlaceId, JobId)
 end)
