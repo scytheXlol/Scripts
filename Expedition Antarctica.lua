@@ -1,4 +1,5 @@
 local RS = game:GetService('ReplicatedStorage')
+local LP = game:GetService("Players").LocalPlayer
 local JobId = game.JobId
 local PlaceId = game.PlaceId
 local Remote = RS:WaitForChild("ClaimReward")
@@ -11,6 +12,6 @@ Fire(Remote)
 
 queue_on_teleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/scytheXlol/Scripts/refs/heads/main/Expedition%20Antarctica.lua"))()]])
 
-wait(8)
-
-TeleportService:TeleportToPlaceInstance(PlaceId, JobId)
+LP["Expedition Data"].Coins.Changed:Connect(function(Value)
+    TeleportService:TeleportToPlaceInstance(PlaceId, JobId)
+end)
